@@ -1,0 +1,21 @@
+import { VoteComponent } from './vote.component';
+
+describe('VoteComponent', () => {
+  let component: VoteComponent;
+
+  beforeEach(() => {
+    component = new VoteComponent();
+  });
+
+  it('should increment totalVotes if upvoted', () => {
+    component.upVote();
+
+    expect(component.totalVotes).toBe(1);
+  });
+
+  it('should decrement totalVotes if downvoted', () => {
+    component.downVote();
+
+    expect(component.totalVotes).toBe(-1);
+  });
+});
